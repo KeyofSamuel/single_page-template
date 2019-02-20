@@ -1,0 +1,40 @@
+#######################################
+
+README for Single Page LaTeX2e Template
+
+#######################################
+
+This README contains notes and general instructions for using and configuring the document template file.  The sections below outline how the template file is structured, what is necessary to modify in order to customize for fitness of purpose and a brief explanation of the included SNIPPETS file.  While these files can be used for any type of document, they were created as a template to document technical systems.  As such, some options were set up in order to satisfy the necessary requirements of the technical documentation.  Please feel free to modify any part of these templates.  They are free to use.  Reference back to the original author/source is appreciated, but not necessary.
+
+###
+## General Notes
+# 
+
+The document template files are set up with one master file containing all preamble information and the \begin{document}::\end{document} environment (single_page-template.tex) with included title section, a contents file (toc.tex) and the contents directory.
+
+The preamble information in the master file is commented to explain each pre-set configuration.  Pre-loaded packages were chosen as a subset of features commonly used.  Header, footer, and all heading styles were customized based on style guidelines for the original document.  As they are relatively aesthetically functional, they have been maintained, but can be easily adjusted to suit.  The same is for the font choice.  It was chosen for the original document, but any standard LaTeX font can be substituted.
+
+The document environment calls a custom title section using standard LaTeX markup.  Customization was more easily accomplished with standard LaTeX markup, rather than the limited title options.  The 'Includes' section with the 'toc.tex' file was designed as an easy way to include all content files on a clean, easily commented page, without having to sift through the preamble and document information every time an update was needed.  The 'input{}' command is used to allow for include nesting.
+
+Content files are kept in the 'contents' directory in order to keep the top level directory clean.  Files in the 'contents' directory can be kept at that level, or further sorted into sub-directories, depending upon the size and scope of the document.  Keep in mind that all include statements will use the entire relative path to the included file as compile is done at the top level directory.
+
+###
+## Necessary Modifications
+# 
+
+The template files are set up to require little modification to get started with a new document.  There are, however, several places where generic information should be changed to show pertinent information regarding the document and its owner/creator/organization.
+
+The 'single_page-template.tex' file and directory name should be modified to fit the intended document.  
+  - The right foot of the footer needs to have the company/organization name changed.  
+  - The custom color definition of 'Color1' is used for the title page and headers.  Change the color to suit your needs.
+  - Under the 'Company Logo and Information' comments, set the company name, address and contact information.
+  - Under the 'Document Name' comments, set the department or organization name and the document name.
+  - The title page calls 'logo.png' and includes it next to the company info.  Rename your logo file to this, or update the file name in the appropriate place.
+
+The contents directory and 'toc.tex' file contains the 'blank_page.tex' file.  This file can be removed and the 'toc.tex' file updated.  As Git does not allow for the inclusion of blank directories, the 'blank_page.tex' file was used as both a placeholder and example of including a content file.
+
+###
+## SNIPPETS File
+# 
+
+The SNIPPETS file is a small repository for custom options and packages.  These were used in some technical documentation books, but not often enough to require including with the master file as a default option.
